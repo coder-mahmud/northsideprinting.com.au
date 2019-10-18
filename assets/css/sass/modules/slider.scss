@@ -1,0 +1,66 @@
+.slider_area{
+    position: relative;
+    background:$darkGray;
+
+
+    .text_part{
+        position: absolute;
+        width:550px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background: rgba(23, 24, 24, 0.8);
+        padding:75px 25px;
+        color:#fff;
+
+        .title{
+            margin-bottom: 30px;
+        }
+
+
+        a{
+            
+        }
+    }
+
+
+    .image_holder{
+        // background: url('../img/get-organised-for-2020.jpg');
+        min-height: 450px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        max-width: 1920px;
+        margin: 0 auto;
+
+
+        @media only screen and (max-width:1900px){
+            min-height: 450px;
+        
+        }
+
+        @media only screen and (max-width:1700px){
+            min-height: 350px;
+        
+        }
+        
+        @media only screen and (max-width:1400px){
+            min-height: 300px;
+        
+        }
+
+        @media only screen and (max-width:1199px){
+            // background: url('../img/get-organised-for-2020-mobile.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        @media only screen and (max-width:575px){
+            min-height: 250px;
+        }
+
+        @media only screen and (max-width:400px){
+            min-height: 190px;
+        }
+    }
+}

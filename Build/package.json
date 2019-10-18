@@ -1,0 +1,31 @@
+{
+  "name": "cannabition-2_html",
+  "version": "1.0.0",
+  "description": "Cannabition project's html part.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wickandmortar/html.cannabition2.git"
+  },
+  "author": "wickandmortar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wickandmortar/html.cannabition2/issues"
+  },
+  "homepage": "https://github.com/wickandmortar/html.cannabition2#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-watch": "^5.0.1",
+    "webpack": "^4.33.0"
+  }
+}

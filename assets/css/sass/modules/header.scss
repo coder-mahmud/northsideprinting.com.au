@@ -1,0 +1,92 @@
+.logo_bar{
+    padding: 20px 0;
+    background: #ddd;
+    .logo{
+
+        img{
+            max-width: 300px;
+        }
+
+        @include medium{
+            display: block;
+            text-align: center;
+        }
+    }
+
+    .search_phone{
+        float: right;
+
+        .search_holder{
+            position: relative;
+            i{
+                position: absolute;
+                left: 11px;
+                top: 0px;
+                font-size: 18px;
+            }
+
+            input{
+                height: 40px;
+                padding-left: 35px;
+            }
+        }
+
+        a.phone{
+            display: inline-block;
+            position: relative;
+            top: 8px;
+            margin-left: 20px;
+            text-align: center;
+
+            span{
+                display: block;
+            }
+        }
+
+        @include medium{
+            float: none;
+            text-align: left;
+            
+        }
+
+        @include extraSmall{
+            .search_holder{
+                display: none;
+            }
+        }
+    }
+}
+
+.menu_area{
+    // background: #95C43E;
+    background: $mainGreen;
+    @include medium{
+        .nav_menu_toggler_icon{
+            position: absolute;
+            top: -55px;
+            z-index: 999;
+            /* background: red; */
+            right: 25px;
+            border: 1px solid #E81D2A;
+            border-radius: 3px;
+        }
+        .nav_menu_toggler_icon span{
+            color:#E81D2A;
+        }
+    }
+
+    @include extraSmall{
+        .nav_menu_toggler_icon{
+            right: 10px;
+        }
+    }
+}
+.menu-container .manu ul li{
+	/*position: relative;*/
+}
+.menu-container .manu ul li ul{
+    z-index: 99;
+/*    left: 0;
+    min-width: 300px;*/
+
+}

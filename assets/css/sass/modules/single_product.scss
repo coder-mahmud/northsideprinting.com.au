@@ -1,0 +1,263 @@
+.single_product_area{
+    padding:75px 0;
+
+    .info_before_product_image{
+        svg{
+            position: relative !important;
+            max-width: 100px;
+        }
+    }
+
+    .product_image{
+
+        .slides{
+            li{
+                p{
+                    background: #dddddd;
+                    padding:8px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+        
+        .flexslider{
+            margin-bottom: 0;
+            border-top: 0px solid #000;
+        }
+    }
+
+    .product_description{
+        font-size: 14px;
+        font-family: 'Montserrat-Light';
+        margin: 15px 0;
+    }
+
+    .accordion_area{
+
+        .card{
+            border:none;
+            border-bottom:1px solid #000;
+            border-top: 1px solid #000;
+            &:last-child{
+                border-top: 0px solid #000;
+            }
+        }
+
+
+        .card-header{
+            background: none;
+            border-radius: 0;
+            border-bottom: 0;
+            padding-left: 0;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            
+            .btn{
+                font-size: 13px;
+                color:#000;
+            }
+
+            button{
+                padding-left: 0;
+                width: 100%;
+                text-align: left;
+            }
+
+            i{
+                font-size: 25px;
+                position: relative;
+                transition:all .5s ease;
+                transform:rotate(180deg);
+                float: right;
+            }
+
+            .collapsed {
+                i{
+                    transform:rotate(0deg) !important;
+                }
+            }
+
+            .btn-link:hover{
+                text-decoration: none;
+            }
+        }
+
+        .card-body{
+            padding-left: 0;
+            padding-top: 0;
+        }
+
+        .artwork_templates{
+            overflow: hidden;
+            li{
+                display:inline;
+                float: left;
+
+                a{
+                    position: relative;
+                    text-indent: -9999px;
+                    width:36px;
+                    height: 36px;
+                    display: block;
+                
+                    &:after{
+                        
+                        background-repeat:no-repeat;
+                        position: absolute;
+                        content:'';
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        transition:opacity .5s ease;
+                        opacity:0;
+                        
+
+                    }
+
+                    &:hover{
+                        &:after{
+                            opacity:1;
+                            z-index: 9;
+                        }
+                    }
+                }
+
+                &.photoshop{
+                    a{
+                        background-position: 0px -36px !important;
+                        background:url('../img/templates-icons.png');
+    
+                        &:hover{
+                            &:after{
+                                background:url('../img/templates-icons.png');
+                                background-position: 0px 0px;
+                            }
+                        }
+                    }
+                }
+
+                &.illustrator{
+                    a{
+                        background-position: -36px -36px !important;
+                        background:url('../img/templates-icons.png');
+    
+                        &:hover{
+                            &:after{
+                                background:url('../img/templates-icons.png');
+                                background-position: -36px 0px;
+                            }
+                        }
+                    }
+                }
+
+                &.id{
+                    a{
+                        background-position: -72px -36px !important;
+                        background:url('../img/templates-icons.png');
+    
+                        &:hover{
+                            &:after{
+                                background:url('../img/templates-icons.png');
+                                background-position: -72px 0px;
+                            }
+                        }
+                    }
+                }
+
+                &.pdf{
+                    a{
+                        background-position: -108px -36px !important;
+                        background:url('../img/templates-icons.png');
+    
+                        &:hover{
+                            &:after{
+                                background:url('../img/templates-icons.png');
+                                background-position: -108px 0px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+.single_product_speciality_area{
+    padding:75px 0;
+    .single_special{
+        text-align: center;
+
+        i{
+            color:$lightRed;
+            font-size: 35px;
+        }
+
+        .title{
+            font-size: 20px;
+            margin-top: 15px;
+        }
+        p{
+            font-size: 16px;
+        }
+    }
+}
+
+
+
+.single_product_tabbed_area{
+    .nav-link.active{
+        background: #EFEDEE;
+        border-bottom:none;
+    }
+    .nav-tabs .nav-item{
+        margin-bottom: -2px;
+    }
+
+    .tab-content{
+        background: #EFEDEE;
+        padding:25px;
+        font-family: 'Montserrat-Light';
+
+        h2{
+            font-family: 'Montserrat-Light';
+        }
+
+        p{
+
+        }
+
+        ul{
+            padding-left: 30px;
+            list-style-type: square;
+            li{
+
+            }
+        }
+    }
+}
+
+.single-products{
+    .breadcrumbs_col{
+        .breadcrumbs{
+            padding-left: 4px;
+        }
+
+        i{
+            font-size: 12px;
+        }
+        
+    }
+
+    .title_col{
+        h1{
+            margin:0;
+            font-weight: bold;
+        }
+    }
+    .heading_row{
+        margin-bottom: 15px;
+    }
+}
