@@ -122,65 +122,10 @@
                             endwhile; endif; ?>
                         </p>
 
-                        <div class="accordion accordion_area" id="accordionExample">
-                            <div class="card z-depth-0 bordered">
-                                <div class="card-header" id="headingOne">
-                                    <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne"
-                                    aria-expanded="true" aria-controls="collapseOne">
-                                    Artwork Guide <i class="fa fa-angle-down"></i>
-                                    </button>
-                                    </h5>
-                                </div>
-                                <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
-                                data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <?php the_field('nsp_products_artwork_guide'); ?>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card z-depth-0 bordered">
-                                <div class="card-header" id="headingTwo">
-                                    <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
-                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Artwork Template <i class="fa fa-angle-down"></i>
-                                    </button>
-                                </h5>
-                                </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                                    <div class="card-body">
-                                        <ul class="artwork_templates">
-                                        
-                                            <?php if(get_field('nsp_products_psd_template')): ?>
-                                                <li class="photoshop"><a href="<?php echo get_field('nsp_products_psd_template'); ?>">Photoshop</a></li>
-                                            <?php endif; ?>
-
-                                            <?php if(get_field('nsp_products_ai_template')): ?>
-                                                <li class="illustrator"><a href="<?php echo get_field('nsp_products_ai_template'); ?>">Illustrator</a></li>
-                                            <?php endif; ?>
-
-                                            <?php if(get_field('nsp_products_pdf_template')): ?>
-                                                <li class="pdf"><a href="<?php echo get_field('nsp_products_pdf_template'); ?>">PDF</a></li>
-                                            <?php endif; ?>
-
-                                            <?php if(get_field('nsp_products_id_template')): ?>
-                                                <li class="id"><a href="<?php echo get_field('nsp_products_id_template'); ?>">ID</a></li>
-                                            <?php endif; ?>
-
-
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
 
                     <div class="col-md-6">
-                        <!-- <iframe id="wl" src="https://printportal.cloud/wl/120098" width="100%" height="650" style="border:none;"></iframe> <script src="https://printportal.cloud/images/resize.txt" type="text/javascript"></script> -->
                         <?php the_field('nsp_products_pricing_iframe'); ?>
                     </div>
                     
@@ -239,14 +184,9 @@
                         <?php if( have_rows('nsp_products_tabs') ): ?>
                             <?php $i=1; while( have_rows('nsp_products_tabs') ): the_row(); ?>
                                 
-                                <?php 
-                                
-                                    $title = get_sub_field('nsp_products_tab_heading');
-                                
-                                ?>
-
+                            
                                 <li class="nav-item">
-                                    <a class="nav-link <?php echo $i==1 ? 'active' : '' ?>" id="tab-<?php echo $i; ?>" data-toggle="tab" href="#tabs-<?php echo $i; ?>" role="tab" aria-controls="tab-<?php echo $i; ?>" aria-selected="true"><?php echo $title; ?></a>
+                                    <a class="nav-link <?php echo $i==1 ? 'active' : '' ?>" id="tab-<?php echo $i; ?>" data-toggle="tab" href="#tabs-<?php echo $i; ?>" role="tab" aria-controls="tab-<?php echo $i; ?>" aria-selected="true">title<?php //echo $title; ?></a>
                                    
                                 </li>
                                 
@@ -255,104 +195,146 @@
                             <?php $i++; endwhile; ?>
                         <?php endif; ?>
 
-
-                            <!-- <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">DETAILS</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">TECHNICAL SPEC</a>
-                            </li> -->
-
-
                         </ul>
+
+                        
 
                         <div class="tab-content" id="myTabContent">
 
                         <?php if( have_rows('nsp_products_tabs') ): ?>
                             <?php $i=1; while( have_rows('nsp_products_tabs') ): the_row(); ?>
                                 
-                                <?php 
                                 
-                                $image = get_sub_field('nsp_products_tab_image'); 
-                                $description = get_sub_field('nsp_products_tab_details', false, false);
-                                
-                                ?>
 
-                                <div class="tab-pane fade  <?php echo  $i==1? 'show active' : ''?>" id="tabs-<?php echo $i; ?>" role="tabpanel" aria-labelledby="tab-<?php echo $i; ?>">
+                                
+                                <div class="tab-pane fade  <?php echo  $i==1 ? 'show active' : '' ?>" id="tabs-<?php echo $i; ?>" role="tabpanel" aria-labelledby="tab-<?php echo $i; ?>">
+                                    
+
+
+                                        
+
+                                    <?php if(get_sub_field('nsp_product_tab_type') == 'No'): ?>
                                     <div class="row">
-                                        <div class="col-md-4">
-                                            <img src="<?php echo $image; ?>" alt="">
+
+                                        <div class="col-md-6">
+                                            
+                                            <ul class="descriptions_block">
+
+                                            <?php if( have_rows('nsp_product_tab_specs') ): ?>
+                                                <?php  while( have_rows('nsp_product_tab_specs') ): the_row(); ?>
+                                                    
+                                                    <?php 
+                                                    
+                                                      $heading = get_sub_field('nsp_product_specs_heading'); 
+                                                      $text = get_sub_field('nsp_product_specs_text');
+                                                    
+                                                    ?>
+
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-md-3 heading">
+                                                                <?php echo $heading; ?>
+                                                            </div>
+                                                            <div class="col-md-9 text">
+                                                                <?php echo $text; ?>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </li>
+
+                                                    
+                                                <?php endwhile; ?>
+                                            <?php endif; ?>
+                                            
+                                            </ul>
                                         </div>
 
-                                        <div class="col-md-8">
-                                            <?php echo $description; ?>
-                                        </div>
 
+                                        <div class="col-md-6">
+                                            
+                                            <ul class="descriptions_block">
+
+                                            <?php if( have_rows('nsp_product_tab_specs_right') ): ?>
+                                                <?php  while( have_rows('nsp_product_tab_specs_right') ): the_row(); ?>
+                                                    
+                                                    <?php 
+                                                    
+                                                      $heading = get_sub_field('nsp_product_specs_heading_right'); 
+                                                      $text = get_sub_field('nsp_product_specs_text_right');
+                                                    
+                                                    ?>
+
+                                                    <li>
+                                                        <div class="row">
+                                                            <div class="col-md-3 heading">
+                                                                <?php echo $heading; ?>
+                                                            </div>
+                                                            <div class="col-md-9 text">
+                                                                <?php echo $text; ?>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </li>
+
+                                                    
+                                                <?php endwhile; ?>
+                                            <?php endif; ?>
+                                            
+                                            </ul>
+                                        </div>
+                                        
+                                        <?php if(get_sub_field('nsp_product_desc_text')) : ?>
+                                            <div class="col-12 instructions">
+                                                <b>General Instructions:</b>
+                                                <?php the_sub_field('nsp_product_desc_text'); ?>
+                                               
+                                            </div>
+                                        <?php endif; ?>
                                     </div>
-                                </div>
+                                    <?php else: ?>
 
+                                    <div class="row assets">
+
+
+                                        <?php if( have_rows('family_choose_area_topic') ): ?>
+                                            <?php $i=1; while( have_rows('family_choose_area_topic') ): the_row(); ?>
+                                                
+                                                <?php 
+                                                
+                                                  $heading_first = get_sub_field('nsp_product_asset_heading_first_row'); 
+                                                  $heading_second = get_sub_field('nsp_product_asset_heading_second_row'); 
+                                                  $image = get_sub_field('nsp_product_asset_image');
+                                                  $file = get_sub_field('nsp_product_asset_file');
+                                                
+                                                ?>
+
+                                                <div class="col-md-4 single_asset">
+                                                    <h2 class="title"><?php echo $heading_first; ?> <span class="size"><?php echo $heading_second; ?></span></h2>
+                                                    <img src="<?php echo $image; ?>" alt="">
+                                                    <a href="<?php echo $file; ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/pdf_doc.png" alt=""> DOWNLOAD</a>
+                                                </div>
+
+                                                
+                                            <?php $i++; endwhile; ?>
+                                        <?php endif; ?>
+									</div>
+
+                                    <?php endif; ?>
+                                        
+
+                                    
+                                </div>
+								 
                                 
                             <?php $i++; endwhile; ?>
                         <?php endif; ?>
 
-
-
-
-
-                            <!-- <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/folded-business-card-400gsm.jpg" alt="">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <h2>Beyond the Fold</h2>
-                                        <p>Give your clients more with our folded business cards. Available on 300gsm Kraft or 400gsm Silk and delivered flat and creased ready for folding when required.</p>
-                                        <p>You can be as creative as you like with this range. Whether your client needs to showcase a price list, a mini-menu, calendar / appointment table or if they just want a business card with an extra edge then we have you covered.</p>
-                                        <p>Choose from:</p>
-                                        <ul>
-                                            <li>170mm x 55mm (can be folded to 85mm x 55mm)</li>
-                                            <li>85mm x 110mm (can be folded to 85mm x 55mm)</li>
-                                            <li>300gsm Brown Kraft - Rustic and writeable</li>
-                                            <li>400gsm Art Board Silk Finish - available un-laminated or with Matt or Gloss lamination.</li>
-                                        </ul>
-                                        <p>If you have a design with a solid background colour or areas of heavy ink coverage on or around the crease, we recommend adding lamination to ensure the perfect finish and to help prevent any cracking when the card is folded.</p>
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-
-
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                    <div class="row">
-                                            <div class="col-md-4">
-                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/folded-business-card-400gsm.jpg" alt="">
-                                            </div>
-                                            <div class="col-md-8">
-                                                <h2>Technical Specifications for Folded Business Cards</h2>
-                                                <p>Before submitting folded business card artwork, we recommend you print a mock up to check the artwork is positioned correctly.</p>
-                                                <p>Artwork templates are available for download to assist with setting up your files. These include the panel layout and the different orientations possible to ensure your artwork backs up correctly when printed.</p>
-                                                <p>When creating Folded Business Cards artwork, please supply your artwork as a 2 page PDF in spreads. For example, page 1 of your PDF should contain the outside spread of your Folded Business Cards artwork and page 2 should contains the inner spread. </p>
-                                                <ul>
-                                                    <li>Include 3mm bleed on all sides</li>
-                                                    <li>Supply as a CMYK PDF</li>
-                                                    <li>Outline or embed fonts</li>
-                                                    <li>300dpi resolution</li>
-                                                </ul>
-        
-                                            </div>
-                                        </div>
-                            </div>
-                        </div> -->
-
-
-
-
-                    </div>
-                </div>
+					
+                     
+                </div><!-- End Tab Content -->
             </div>
+        </div>
+        </div>
         </div>
 
 

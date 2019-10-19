@@ -66,24 +66,6 @@ function nsp_products_acf_field_groups() {
 		'key' => 'nsp_porducts_post',
 		'title' => 'North Side Printing Products',
 		'fields' => array(
-			/*
-			array(
-				'key' => 'nsp_products_review_number',
-				'label' => 'Reviews no on Trustpilot',
-				'name' => 'nsp_products_review_number',
-				'type' => 'text',
-                'default_value' => '100',
-                'instructions' => 'Leave this field blank if you dont want to show TrustPlus review number.'
-            ),
-
-            array(
-				'key' => 'nsp_products_review_link',
-				'label' => 'Reviews link for Trustpilot',
-				'name' => 'nsp_products_review_link',
-				'type' => 'link',
-            ),
-            */
-            
             array(
 				'key' => 'nsp_products_price_starts',
 				'label' => 'Product Price Starts From...',
@@ -118,12 +100,173 @@ function nsp_products_acf_field_groups() {
             ),
 
             array(
-				'key' => 'nsp_products_artwork_guide',
-				'label' => 'Product Artwork Guide Text',
-				'name' => 'nsp_products_artwork_guide',
-				'type' => 'wysiwyg',
-			),
+				'key' => 'nsp_products_tabs',
+				'label' => 'Product Tabs',
+				'name' => 'nsp_products_tabs',
+				'type' => 'repeater',
+				'layout' => 'row',
+				'button_label' => 'Add New Tab',
+				'sub_fields' => array(
 
+					array(
+						'key' => 'nsp_product_tab_type',
+						'label' => 'Is it Assets type tab?',
+						'name' => 'nsp_product_tab_type',
+                        'type' => 'radio',
+                        'choices' => array(
+							'No' => 'No',
+							'Yes' => 'Yes',
+						),
+						'return_format' => 'value',
+						'default_value' => 'No',
+					),
+
+
+
+					array(
+
+						'key' => 'nsp_product_tab_specs',
+						'label' => 'Product Specification for Left Column',
+						'name' => 'nsp_product_tab_specs',
+                        'type' => 'repeater',
+                        'layout' => 'table',
+                        'conditional_logic' => array(
+							array(
+								array(
+									'field' => 'nsp_product_tab_type',
+									'operator' => '==',
+									'value' => 'No',
+								),
+							),
+						),
+                        'sub_fields' => array(
+
+                        	array(
+								'key' => 'nsp_product_specs_heading',
+								'label' => 'Specification Heading',
+								'name' => 'nsp_product_specs_heading',
+		                        'type' => 'textarea',
+							),
+
+                        	array(
+								'key' => 'nsp_product_specs_text',
+								'label' => 'Specification Text',
+								'name' => 'nsp_product_specs_text',
+		                        'type' => 'wysiwyg',
+							),
+                        )
+					),
+
+
+					array(
+
+						'key' => 'nsp_product_tab_specs_right',
+						'label' => 'Product Specification for Right Column',
+						'name' => 'nsp_product_tab_specs_right',
+                        'type' => 'repeater',
+                        'layout' => 'table',
+                        'conditional_logic' => array(
+							array(
+								array(
+									'field' => 'nsp_product_tab_type',
+									'operator' => '==',
+									'value' => 'No',
+								),
+							),
+						),
+                        'sub_fields' => array(
+
+                        	array(
+								'key' => 'nsp_product_specs_heading_right',
+								'label' => 'Specification Heading',
+								'name' => 'nsp_product_specs_heading_right',
+		                        'type' => 'textarea',
+							),
+
+                        	array(
+								'key' => 'nsp_product_specs_text_right',
+								'label' => 'Specification Text',
+								'name' => 'nsp_product_specs_text_right',
+		                        'type' => 'wysiwyg',
+							),
+                        )
+					),
+
+					array(
+						'key' => 'nsp_product_desc_text',
+						'label' => 'Extra Description Text',
+						'name' => 'nsp_product_desc_text',
+                        'type' => 'textarea',
+                        'conditional_logic' => array(
+							array(
+								array(
+									'field' => 'nsp_product_tab_type',
+									'operator' => '==',
+									'value' => 'No',
+								),
+							),
+						),
+					),
+
+					array(
+						'key' => 'nsp_product_asset_tab',
+						'label' => 'Assets Tab',
+						'name' => 'nsp_product_asset_tab',
+                        'type' => 'repeater',
+                        'conditional_logic' => array(
+							array(
+								array(
+									'field' => 'nsp_product_tab_type',
+									'operator' => '==',
+									'value' => 'Yes',
+								),
+							),
+						),
+						'sub_fields' => array(
+
+                        	array(
+								'key' => 'nsp_product_asset_heading_first_row',
+								'label' => 'Asset Heading First Row',
+								'name' => 'nsp_product_asset_heading_first_row',
+		                        'type' => 'text',
+		                        'placeholder' => ''
+							),
+                        	array(
+								'key' => 'nsp_product_asset_heading_second_row',
+								'label' => 'Asset Heading Second Row',
+								'name' => 'nsp_product_asset_heading_second_row',
+		                        'type' => 'text',
+		                        'placeholder' => ''
+							),
+                        	array(
+								'key' => 'nsp_product_asset_image',
+								'label' => 'Asset Heading Image',
+								'name' => 'nsp_product_asset_image',
+		                        'type' => 'image',
+		                        'return_format' => 'url'
+							),
+                        	array(
+								'key' => 'nsp_product_asset_file',
+								'label' => 'Asset PDF File',
+								'name' => 'nsp_product_asset_file',
+		                        'type' => 'file',
+		                        'return_format' => 'url'
+							),
+
+                        )
+
+
+					),
+
+
+
+
+
+
+				)
+            ),
+
+            /*
             array(
 				'key' => 'nsp_products_psd_template',
 				'label' => 'Product Artwork Template in PSD format',
@@ -155,6 +298,7 @@ function nsp_products_acf_field_groups() {
 				'type' => 'file',
 				'return_format' => 'url',
 			),
+			*/
 
             array(
 				'key' => 'nsp_products_pricing_iframe',
@@ -197,7 +341,7 @@ function nsp_products_acf_field_groups() {
 				),
 
             ),
-
+            /*
             array(
 				'key' => 'nsp_products_tabs',
 				'label' => 'Product TABs area',
@@ -232,7 +376,7 @@ function nsp_products_acf_field_groups() {
 				),
 
             ),
-
+            */
 
 
 

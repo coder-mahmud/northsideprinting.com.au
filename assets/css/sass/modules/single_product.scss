@@ -231,11 +231,70 @@
 
         ul{
             padding-left: 30px;
-            list-style-type: square;
+            /*list-style-type: square;*/
             li{
 
             }
         }
+		
+		ul.descriptions_block{
+			padding-bottom: 30px;
+			li{
+				margin-bottom: 10px;
+				.heading{
+					text-align: right;
+					font-weight: bold;
+
+				}
+
+				.text{
+					font-size: 13px;
+				}
+			}
+
+			ul{
+				padding-left: 0;
+				li{
+					margin-bottom: 5px;
+				}
+			}
+		}
+
+		.instructions{
+			border-top: 1px solid #000;
+			padding-top: 30px;
+			ul{
+				padding-left: 15px;
+				list-style-type: square;
+			}
+		}
+
+		.assets{
+			.single_asset{
+				padding:15px;
+				border:1px solid #000;
+				border-radius: 3px;
+				margin-bottom: 25px;
+			}
+
+			.title{
+				font-size: 22px;
+
+				.size{
+					display: block;
+
+				}
+			}
+
+			a{
+				display: block;
+				margin-top: 25px;
+				img{
+					max-width: 30px;
+				}
+			}
+		}
+
     }
 }
 
