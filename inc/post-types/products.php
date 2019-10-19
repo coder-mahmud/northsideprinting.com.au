@@ -109,6 +109,13 @@ function nsp_products_acf_field_groups() {
 				'sub_fields' => array(
 
 					array(
+						'key' => 'nsp_product_tab_title',
+						'label' => 'Tab Title',
+						'name' => 'nsp_product_tab_title',
+                        'type' => 'text',
+					),
+
+					array(
 						'key' => 'nsp_product_tab_type',
 						'label' => 'Is it Assets type tab?',
 						'name' => 'nsp_product_tab_type',
@@ -129,7 +136,7 @@ function nsp_products_acf_field_groups() {
 						'label' => 'Product Specification for Left Column',
 						'name' => 'nsp_product_tab_specs',
                         'type' => 'repeater',
-                        'layout' => 'table',
+                        'layout' => 'row',
                         'conditional_logic' => array(
 							array(
 								array(
@@ -164,7 +171,7 @@ function nsp_products_acf_field_groups() {
 						'label' => 'Product Specification for Right Column',
 						'name' => 'nsp_product_tab_specs_right',
                         'type' => 'repeater',
-                        'layout' => 'table',
+                        'layout' => 'row',
                         'conditional_logic' => array(
 							array(
 								array(
@@ -196,7 +203,7 @@ function nsp_products_acf_field_groups() {
 						'key' => 'nsp_product_desc_text',
 						'label' => 'Extra Description Text',
 						'name' => 'nsp_product_desc_text',
-                        'type' => 'textarea',
+                        'type' => 'wysiwyg',
                         'conditional_logic' => array(
 							array(
 								array(

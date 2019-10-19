@@ -186,7 +186,7 @@
                                 
                             
                                 <li class="nav-item">
-                                    <a class="nav-link <?php echo $i==1 ? 'active' : '' ?>" id="tab-<?php echo $i; ?>" data-toggle="tab" href="#tabs-<?php echo $i; ?>" role="tab" aria-controls="tab-<?php echo $i; ?>" aria-selected="true">title<?php //echo $title; ?></a>
+                                    <a class="nav-link <?php echo $i==1 ? 'active' : '' ?>" id="tab-<?php echo $i; ?>" data-toggle="tab" href="#tabs-<?php echo $i; ?>" role="tab" aria-controls="tab-<?php echo $i; ?>" aria-selected="true"><?php the_sub_field('nsp_product_tab_title'); ?></a>
                                    
                                 </li>
                                 
@@ -285,7 +285,7 @@
                                         
                                         <?php if(get_sub_field('nsp_product_desc_text')) : ?>
                                             <div class="col-12 instructions">
-                                                <b>General Instructions:</b>
+                                                <!-- <b>General Instructions:</b> -->
                                                 <?php the_sub_field('nsp_product_desc_text'); ?>
                                                
                                             </div>
@@ -296,8 +296,8 @@
                                     <div class="row assets">
 
 
-                                        <?php if( have_rows('family_choose_area_topic') ): ?>
-                                            <?php $i=1; while( have_rows('family_choose_area_topic') ): the_row(); ?>
+                                        <?php if( have_rows('nsp_product_asset_tab') ): ?>
+                                            <?php $i=1; while( have_rows('nsp_product_asset_tab') ): the_row(); ?>
                                                 
                                                 <?php 
                                                 
@@ -308,10 +308,12 @@
                                                 
                                                 ?>
 
-                                                <div class="col-md-4 single_asset">
-                                                    <h2 class="title"><?php echo $heading_first; ?> <span class="size"><?php echo $heading_second; ?></span></h2>
-                                                    <img src="<?php echo $image; ?>" alt="">
-                                                    <a href="<?php echo $file; ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/pdf_doc.png" alt=""> DOWNLOAD</a>
+                                                <div class="col-md-4">
+                                                    <div class="single_asset">
+                                                        <h2 class="title"><?php echo $heading_first; ?> <span class="size"><?php echo $heading_second; ?></span></h2>
+                                                        <img src="<?php echo $image; ?>" alt="">
+                                                        <a href="<?php echo $file; ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/pdf_doc.png" alt=""> DOWNLOAD</a>
+                                                    </div>
                                                 </div>
 
                                                 
