@@ -1,0 +1,44 @@
+.artwork_area{
+
+	.onpage_links{
+		text-align: center;
+		background: $navyBlue;
+		ul{
+			li{
+				display: inline-block;
+				a{
+					color:$white;
+					padding:10px 8px;
+					display: block;
+
+					&:hover{
+						color:$lightRed;
+					}
+				}
+			}
+		}
+
+		&.stick{
+			position: fixed;
+			top: 0;
+			z-index: 9;
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+
+.anchor_holder{
+	position: relative;
+	top: -100px;
+}
+
+.artwork_heading{
+	padding:100px 0;
+	text-align: center;
+	background-image:url('../img/artwork-and-templates-bg.jpg');
+	background-repeat: no-repeat;
+	background-size:cover;
+	color:$white;
+	font-size: 60px;
+}

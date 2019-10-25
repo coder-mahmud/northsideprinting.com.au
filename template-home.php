@@ -10,6 +10,7 @@ get_header(); ?>
         $nsp_home_slider_image_mobile = get_field('nsp_home_slider_image_mobile');
         // $ = get_field('');    
     ?>
+    
         <div class="slider_area">
             <!-- <img src="./<?php echo get_template_directory_uri(); ?>/assets/img/slider.jpg" alt="">
             <div class="text_part">
@@ -70,6 +71,8 @@ get_header(); ?>
                 </div>
             </div>
         </div>
+
+
 
         <div class="highlighted_products">
             <div class="container">
@@ -237,6 +240,19 @@ get_header(); ?>
             </div>
         </div>
 
+        <div class="test">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="signup_section">
             <div class="container">
                 <div class="row">
@@ -245,8 +261,69 @@ get_header(); ?>
                     </div>
 
                     <div class="col-md-6">
-                        <input type="email" placeholder="Email Address">
-                        <input type="submit" value="Subscribe">
+                        <!-- <form action="">
+                            <input type="text" placeholder="Email Address">
+                            <input type="submit" value="Subscribe">
+                        </form> -->
+                        
+                        <form method="post" class="af-form-wrapper" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl" >
+                            <div style="display: none;">
+                                <input type="hidden" name="meta_web_form_id" value="2016624928" />
+                                <input type="hidden" name="meta_split_id" value="" />
+                                <input type="hidden" name="listname" value="awlist5457822" />
+                                <input type="hidden" name="redirect" value="https://www.aweber.com/thankyou-coi.htm?m=text" id="redirect_cacea26e22819f039aa889e6c8ba157e" />
+
+                                <input type="hidden" name="meta_adtracking" value="Northside_Print_Form" />
+                                <input type="hidden" name="meta_message" value="1" />
+                                <input type="hidden" name="meta_required" value="name,email" />
+
+                                <input type="hidden" name="meta_tooltip" value="" />
+                                <input id="awf_field-104002696" type="text" name="name" class="text" value="User" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " tabindex="500" />
+                            </div>
+                            
+
+                            
+                            
+                            <input class="text" id="awf_field-104002697" type="text" name="email" value="" tabindex="501" placeholder="Email Address" onfocus=" if (this.value == '') { this.value = ''; }" onblur="if (this.value == '') { this.value='';} " />
+
+                            <input name="submit" id="af-submit-image-2016624928" type="submit" tabindex="502" />
+
+
+                            
+                            <div style="display: none;"><img src="https://forms.aweber.com/form/displays.htm?id=TAyMbGxMLJxMHA==" alt="" /></div>
+                        </form>
+                        <script type="text/javascript">
+                        // Special handling for facebook iOS since it cannot open new windows
+                        (function() {
+                        if (navigator.userAgent.indexOf('FBIOS') !== -1 || navigator.userAgent.indexOf('Twitter for iPhone') !== -1) {
+                        document.getElementById('af-form-2016624928').parentElement.removeAttribute('target');
+                        }
+                        })();
+                        </script><script type="text/javascript">
+                        <!--
+                        (function() {
+                        var IE = /@cc_on!@/false;
+                        if (!IE) { return; }
+                        if (document.compatMode && document.compatMode == 'BackCompat') {
+                        if (document.getElementById("af-form-2016624928")) {
+                        document.getElementById("af-form-2016624928").className = 'af-form af-quirksMode';
+                        }
+                        if (document.getElementById("af-body-2016624928")) {
+                        document.getElementById("af-body-2016624928").className = "af-body inline af-quirksMode";
+                        }
+                        if (document.getElementById("af-header-2016624928")) {
+                        document.getElementById("af-header-2016624928").className = "af-header af-quirksMode";
+                        }
+                        if (document.getElementById("af-footer-2016624928")) {
+                        document.getElementById("af-footer-2016624928").className = "af-footer af-quirksMode";
+                        }
+                        }
+                        })();
+                        -->
+                        </script>
+
+
+
                     </div>
                 </div>
             </div>

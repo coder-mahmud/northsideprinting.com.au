@@ -196,6 +196,22 @@
         }
     }
 
+    input[type="text"]{
+        height: 40px;
+        padding-left: 15px;
+        border-radius: 3px;
+        border: none;
+
+        @include medium{
+            width: 70%;
+        }
+
+        @include extraSmall{
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    }
+
     input[type="submit"]{
         height: 40px;
         padding-left: 19px;

@@ -3,6 +3,9 @@ body{
     font-family: 'Montserrat-Regular';
 }
 
+html,body{
+	overflow-x: hidden;
+}
 
 
 .yellow_black_button{
@@ -67,4 +70,32 @@ body{
 
 .page_body{
 	padding:50px 0;
+}
+
+a{
+	&:hover{
+		text-decoration:none;
+	}
+}
+
+.wpcf7-form{
+
+	.wpcf7-submit{
+		padding:10px 25px;
+		color:$white;
+		background: $navyBlue;
+		border:1px solid $navyBlue;
+		transition:all .3s ease;
+
+
+		&:hover{
+			color:$navyBlue;
+			background: $white;
+		}
+	}
+}
+
+
+iframe{
+	max-width: 100%;
 }

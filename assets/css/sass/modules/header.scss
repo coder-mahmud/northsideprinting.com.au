@@ -59,7 +59,12 @@
 
 .menu_area{
     // background: #95C43E;
-    background: $mainGreen;
+    /*background: $mainGreen;*/
+    
+
+   	@include largeMin{
+   		background: $mainGreen;
+   	}
     @include medium{
         .nav_menu_toggler_icon{
             position: absolute;
@@ -82,11 +87,328 @@
     }
 }
 .menu-container .manu ul li{
-	/*position: relative;*/
+	a{
+		@include medium{
+			color:#000;
+		}
+	}
 }
 .menu-container .manu ul li ul{
     z-index: 99;
+
 /*    left: 0;
     min-width: 300px;*/
+    @include medium{
+    	display: block !important;
+    }
+
+}
+
+.menu-container{
+	background: none;
+}
+
+.menu-container .manu > ul > li {
+	@include medium{
+
+		a{
+				padding:0;
+		}
+		ul{
+			background:none !important;
+			padding-top: 0 !important;
+
+
+			li{
+				a{
+					@include medium{
+						background:none !important;
+						color:#000 !important;
+					}
+
+
+				}
+				ul{
+					padding-left: 15px;
+					margin-bottom: 10px;
+					li{
+						a{
+							padding:0px 8px !important ;
+						}
+					}
+
+				}
+
+				& > a{
+					padding-bottom: 0;
+					border-bottom: 0px;
+				}
+			}		
+		}
+
+	}
+	
+	
+	
+	
+}
+
+@include medium{
+	.menu-container .manu > ul > li{
+		border-bottom:1px solid #000;
+	}
+
+	.menu-container .manu ul li .have_dropdown_n_style li ul li{
+		border-bottom:1px solid #000;
+	}
+
+	.manu > ul{
+		width: 70%;
+	    padding-left: 15px;
+	    padding-bottom: 30px;
+	}
+
+}
+
+/*=============== New Menu work ===================*/
+
+
+
+
+ul li a {
+      color: #292929;
+      text-decoration: none;
+      padding: 15px;
+      display: block;
+}
+
+
+
+ul ul {
+      position: absolute;
+      min-width: 200px;
+      /*background: lightgrey;*/
+      display: none;
+}
+
+ul ul li {
+      display: block;
+}
+
+ul li:hover ul {
+      display: block;
+}
+
+ul li i {
+      color: #292929;
+      float: right;
+      padding-left: 20px;
+}
+
+.menu_toggler{
+      display: none;
+}
+
+@media(max-width: 768px) {
+      .menu_toggler {
+            display: block;
+      }
+
+      ul {
+            display: none;
+            position: static;
+            background: #e3e3e3;
+
+      }
+
+      ul li {
+            display: block;
+      }
+
+      ul ul {
+            position: static;
+            background: #e3e3e3;
+
+      }
+
+      
+}
+
+
+	div.menu_toggler{
+	    position: absolute;
+	    right: 0;
+	    z-index: 99;
+	    bottom: 5px;
+	    background: none;
+	    font-size: 25px;
+
+	    @include small{
+	    	right: 25px;
+	    }
+
+
+	}
+
+ul.main_menu {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	background: #e3e3e3;
+	position: relative;
+
+	& > li{
+		display: inline-block;
+		&:hover{
+			 background: lightgrey;
+		}
+
+		a{
+			position: relative;
+			i{
+				position: absolute;
+			    right: 0;
+			    top: 19px;
+			    font-weight: bold;
+			    font-size: 20px;
+			}
+		}
+
+		/* Submenu item */
+		& > ul{ 
+			width: 100%;
+			left: 0;
+			z-index: 1;
+			height: 270px;
+			background:lightGray;
+			/*display: block;*/
+			& > li{
+				display: inline-block;
+				width:25%;
+				float: left;
+				position: relative;
+				padding-right:15px;
+
+				& > a{
+					color:$lightRed;
+					font-weight: bold;
+					border-bottom:1px solid $mainGreen;
+				}
+
+				& > ul{
+					width: 100%;
+					& > li{
+						display: block;
+						a{
+
+							&:hover{
+								color:$lightRed;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include medium{
+
+	ul.main_menu {
+
+
+		& > li{
+			display: block;
+			width: 100%;
+
+			&:hover{
+				background:none;
+			}
+
+			a{
+				
+				i{
+					position: absolute;
+				    right: 50px;
+				    top: 19px;
+				    font-weight: bold;
+				    font-size: 20px;
+				}
+			}
+
+			/* Submenu item */
+			& > ul{
+				padding-left: 25px;
+				background:none;
+
+				& > li{
+					width: 100%;
+					font-size: 13px;
+
+					& > a{
+						font-size: 13px;
+					}
+
+					& > ul{
+						
+						& > li{
+							font-size: 13px;
+							a{
+								font-size: 13px;
+								&:hover{
+									
+								}
+							}
+						}
+					}
+
+					&:last-child{
+						/*border-bottom: 3px solid $mainGreen;*/
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@include small{
+
+ul.main_menu {
+
+
+		& > li{
+
+			&:hover{
+
+			}
+
+			/* Submenu item */
+			& > ul{
+				& > li{
+
+					& > a{
+						
+					}
+
+					& > ul{
+						
+						& > li{
+							a{
+								&:hover{
+									
+								}
+							}
+						}
+					}
+
+					&:last-child{
+						/*border-bottom: 3px solid $mainGreen;*/
+					}
+				}
+			}
+		}
+	}
+
 
 }

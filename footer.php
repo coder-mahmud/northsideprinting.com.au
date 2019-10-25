@@ -5,15 +5,32 @@
 
 
                     <div class="col-md-3">
-                        <h2 class="column_heading">Help</h2>
-                        <ul class="">
-                            <li><a href="#">Contact us</a></li>
-                            <li><a href="#">Help Line</a></li>
-                            <li><a href="#">Supplying the finest...</a></li>
-                        </ul>
+
+                        <?php dynamic_sidebar('footer_col_one'); ?>
+
                     </div>
 
                     <div class="col-md-3">
+
+                        <?php dynamic_sidebar('footer_col_two'); ?>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <?php dynamic_sidebar('footer_col_three'); ?>
+
+                    </div>
+
+                    <div class="col-md-3">
+
+                        <?php dynamic_sidebar('footer_col_four'); ?>
+
+                    </div>
+
+
+
+<!--                     <div class="col-md-3">
                         <h2 class="column_heading">About</h2>
                         <ul class="">
                             <li><a href="#">About us</a></li>
@@ -38,7 +55,7 @@
                             <li><a href="#">Privacy & Cookie Policy</a></li>
                             <li><a href="#">Environmental Policy</a></li>
                         </ul>
-                    </div>
+                    </div> -->
 
 
 
@@ -52,20 +69,69 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 my-auto">
-                        <p>&copy; 2019. All Rights Reserved.</p>
+                        <?php if(get_field('copyright_text','option') ): ?>
+                            <p><?php the_field('copyright_text','option'); ?></p>
+                        <?php else: ?>
+                            <p>&copy; 2019. All Rights Reserved.</p>
+                        <?php endif; ?>
                     </div>
 
                     <div class="col-sm-6 right_col my-auto">
                         <ul class="footer_social">
-                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+
+
+                            <?php if(get_field('twitter_link','option') ): ?>
+                                <li><a href="<?php echo get_field('twitter_link','option'); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <?php endif; ?>
+
+                            <?php if(get_field('facebook_link','option') ): ?>
+                                <li><a href="<?php echo get_field('facebook_link','option'); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <?php endif; ?>
+
+                            
+                            <?php if(get_field('linkedin_link','option') ): ?>
+                                <li><a href="<?php echo get_field('linkedin_link','option'); ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                            <?php endif; ?>
+
+                        
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         <!-- End Copyright area -->
+
+
+        <div id="search_overlay">
+            <div class="closer_button"><i class="fa fa-times"></i></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        
+                        <h1>
+                            Write in the below box to search anything....
+                            <span>At least 3 charectars</span>
+                        </h1>
+                        <span class="search_input_holder">
+                            <input type="text" class="search_input" name="searchField">
+                        </span>
+                        
+
+
+                        <div id="search_result">
+                            <div class="loader">
+                                <i class="fa fa-spinner fa-pulse"  aria-hidden="true"></i>
+                            </div>
+                            <ul>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+
 
 
 
@@ -79,7 +145,7 @@
         
         <script src="<?php echo get_template_directory_uri(); ?>/assets/js/vendors.js"></script>
         
-        <script src="<?php echo get_template_directory_uri(); ?>/assets/js/app.js"></script>
+        <!-- <script src="<?php echo get_template_directory_uri(); ?>/assets/js/app.js"></script> -->
 
         <?php wp_footer(); ?>
     </body>

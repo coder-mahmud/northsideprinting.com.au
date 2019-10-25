@@ -18,7 +18,7 @@
                         'tax_query' => array(
                             array(
                                 'taxonomy' => 'product-cat',
-                                'field'    => 'term',
+                                'field'    => 'slug',
                                 'terms'    => get_query_var( 'term' ),
                             ),
                         ),
@@ -28,13 +28,17 @@
                     if($query-> have_posts()) : while($query-> have_posts()): $query-> the_post(); ?>
 
                         <div class="col-md-4 single_product">
-                            <a href="">
+                            <?php 
+                                $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+                                $image = $image[0]; ?>
+
+                            <a href="<?php the_permalink(); ?>">
                                 <div class="image_area">
-                                    <div class="image_holder"></div>           
+                                    <div class="image_holder" style="background-image:url('<?php echo $image; ?>')"></div>           
                                 </div>
                                 <div class="info">
-                                    <p class="name">Product Name</p>
-                                    <p class="price">Starts from $10</p>
+                                    <p class="name"><?php the_title(); ?></p>
+                                    <p class="price">Starts from $<?php the_field('nsp_products_price_starts'); ?></p>
                                 </div>  
 
                             </a>

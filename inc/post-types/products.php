@@ -312,7 +312,7 @@ function nsp_products_acf_field_groups() {
 				'label' => 'Product Pricing Iframe',
 				'name' => 'nsp_products_pricing_iframe',
                 'type' => 'textarea',
-                'default_value' => '<iframe src="https://my.lepcolourprinters.com.au/index_wl.html#!/wl/120098/o/0/j/0?t=eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwidHlwIjoiSldUIn0..BDHqsiahmviPgQo6CT4M0g.thLPfqOu4LqS5vk3TB8rWsw4UuzxpMzwZg-iDBBE6t9uTnJBVgGl2FnDs0nWqWdIf5Pdbk75rz_xHMdNPteN5Wh2vUGSpXYyFqG4Yjah41n1s3xmAJ4jlNucXzAqC8jl_vIVfQVaOt5gtAwdo0pSsO0aoGvlkHpIT_xYbQcIntfiwShQb5vy_GTiN4Hvmk7LgLbf0oqj2he7mFmVeXRtLU3lpvSg7kgnr42fRK48uX5dv1Ov_X4l4zEdgOzLGJ6-eORwS9UqsOj0iDX4F_KHVj7sYxik2HmyCUUci6LiotuijoH3662GHRPHL1APXpCdoIznDiRFrWs_oYjTZOJLJ8N9AT-cDAgJMtCJHlOZsFvAK9HVgS9KMcw3gcEuK38cMfc2Wcz0FguJL_cmFSlH4i8iZrx5RDB8ezhahOPi-JY.RG08Q0J8KDENYPtDt_TAHdUNGA2XrUNqMTDoqJuQJBo" frameborder="0" width="100%" height="750"></iframe>',
+                'default_value' => '<iframe id="wl" src="https://printportal.cloud/wl/120098"width="560" height="600" style="border:none;"></iframe> <script src="https://printportal.cloud/images/resize.txt" type="text/javascript"></script>',
             ),
             
             array(
@@ -328,7 +328,7 @@ function nsp_products_acf_field_groups() {
 						'name' => 'nsp_products_icons_icon',
                         'type' => 'text',
                         'instructions' => 'Get icons from here: https://fontawesome.com/v4.7.0/icons/',
-                        'placeholder' => '<i class="fa fa-facebook-official" aria-hidden="true"></i>'
+                        'default_value' => '<i class="fa fa-cubes" aria-hidden="true"></i>'
                         
 					),
 					array(
@@ -336,54 +336,18 @@ function nsp_products_acf_field_groups() {
 						'label' => 'Icon Heading',
 						'name' => 'nsp_products_icons_heading',
                         'type' => 'textarea',
-                        'placeholder' => 'Competitive Prices'
+                        'default_value' => 'Competitive Prices'
                     ),
                     array(
 						'key' => 'nsp_products_icons_text',
 						'label' => 'Icon Text',
 						'name' => 'nsp_products_icons_text',
                         'type' => 'textarea',
-                        'placeholder' => 'Hard-to-beat pricing with trade buyers in mind.'
+                        'default_value' => 'Hard-to-beat pricing with trade buyers in mind.'
 					),
 				),
 
             ),
-            /*
-            array(
-				'key' => 'nsp_products_tabs',
-				'label' => 'Product TABs area',
-				'name' => 'nsp_products_tabs',
-				'type' => 'repeater',
-				'button_label' => 'Add New Tab',
-				'sub_fields' => array(
-					array(
-						'key' => 'nsp_products_tab_heading',
-						'label' => 'Tab Heading',
-						'name' => 'nsp_products_tab_heading',
-                        'type' => 'text',
-                        'placeholder' => 'DETAILS'
-                        
-					),
-					array(
-						'key' => 'nsp_products_tab_details',
-						'label' => 'Tab Details',
-						'name' => 'nsp_products_tab_details',
-                        'type' => 'wysiwyg',
-                        'placeholder' => ''
-                        
-					),
-					array(
-						'key' => 'nsp_products_tab_image',
-						'label' => 'Tab Image',
-						'name' => 'nsp_products_tab_image',
-                        'type' => 'image',
-                        'return_format' => 'url'   
-					),
-
-				),
-
-            ),
-            */
 
 
 

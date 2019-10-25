@@ -1,0 +1,8 @@
+.iframe{
+	max-width: 100%;
+	background: #ddd !important;
+}
+
+.iframe html body{
+	background: #ddd !important;
+}

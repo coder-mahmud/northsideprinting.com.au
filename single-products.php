@@ -135,46 +135,6 @@
         <!-- End Single Product Area -->
 
 
-        <div class="single_product_speciality_area">
-            <div class="container">
-                <div class="row">
-
-
-                <?php if( have_rows('nsp_products_icons') ): ?>
-                    <?php $i=1; while( have_rows('nsp_products_icons') ): the_row(); ?>
-                        
-                        <?php 
-                        
-                        $title = get_sub_field('nsp_products_icons_heading'); 
-                        $icon = get_sub_field('nsp_products_icons_icon'); 
-                        $description = get_sub_field('nsp_products_icons_text', false, false);
-                        
-                        ?>
-
-                        <div class="col-md-3 single_special">
-                            <?php echo $icon; ?>
-                            <h3 class="title"><?php echo $title; ?></h3>
-                            <p><?php echo $description; ?></p>
-                        </div>
-
-                        
-                    <?php $i++; endwhile; ?>
-                <?php endif; ?>
-
-
-                    <!-- <div class="col-md-3 single_special">
-                        <i class="fa fa-cubes" aria-hidden="true"></i>
-                        <h3 class="title">Competitive Prices</h3>
-                        <p>Hard-to-beat pricing with trade buyers in mind.</p>
-                    </div> -->
-
-
-
-
-                </div>
-            </div>
-        </div>
-
         <div class="single_product_tabbed_area">
             <div class="container">
                 <div class="row">
@@ -333,11 +293,51 @@
 
 					
                      
-                </div><!-- End Tab Content -->
-            </div>
-        </div>
-        </div>
+						</div><!-- End Tab Content -->
+					</div>
+				</div>
+			</div>
         </div>
 
+
+        <div class="single_product_speciality_area">
+            <div class="container">
+                <div class="row">
+
+
+                <?php if( have_rows('nsp_products_icons') ): ?>
+                    <?php $i=1; while( have_rows('nsp_products_icons') ): the_row(); ?>
+                        
+                        <?php 
+                        
+                        $title = get_sub_field('nsp_products_icons_heading'); 
+                        $icon = get_sub_field('nsp_products_icons_icon'); 
+                        $description = get_sub_field('nsp_products_icons_text', false, false);
+                        
+                        ?>
+
+                        <div class="col-md-3 single_special">
+                            <?php echo $icon; ?>
+                            <h3 class="title"><?php echo $title; ?></h3>
+                            <p><?php echo $description; ?></p>
+                        </div>
+
+                        
+                    <?php $i++; endwhile; ?>
+                <?php endif; ?>
+
+
+                    <!-- <div class="col-md-3 single_special">
+                        <i class="fa fa-cubes" aria-hidden="true"></i>
+                        <h3 class="title">Competitive Prices</h3>
+                        <p>Hard-to-beat pricing with trade buyers in mind.</p>
+                    </div> -->
+
+
+
+
+                </div>
+            </div>
+        </div>
 
 <?php get_footer(); ?>

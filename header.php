@@ -17,13 +17,29 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 my-auto">
-                        <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt=""></a>
+                        <a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                            <?php
+                                //var_dump(get_field('logo', 'option'));
+                            ?>
+                            <?php if(get_field('logo', 'option') != NULL){ ?>
+                                <img src="<?php echo get_field('logo', 'option') ?>" alt="">
+
+                            <?php }else { ?>
+                            
+                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" alt="">
+
+                            <?php } ?>
+                        </a>
                         <div class="search_phone">
                             <span class="search_holder">
                                 <i class="fa fa-search"></i><input type="text" placeholder="Serach Products">
                             </span>
                             
-                            <a class="phone" href="#">Contact Us <span>(1234)-456-7891</span></a>
+                            <a class="phone" href="tel:0450078200">Contact Us <span>(0450)-078-200</span></a>
+                        </div>
+
+                        <div class="menu_toggler">
+                            <i class="fa fa-bars"></i>
                         </div>
                         
                     </div>
@@ -36,54 +52,76 @@
                 <div class="row">
                     <div class="col-12">
                             <div class="menu-container clearfix">
-                                    <button class="nav_menu_toggler_icon"><span class="fa fa-bars"></span></button>
+                                    <!-- <button class="nav_menu_toggler_icon"><span class="fa fa-bars"></span></button>
                                     <nav class="manu clearfix">
 
-                                    <?php
-                                        if (function_exists('wp_nav_menu')) {
-                                            wp_nav_menu(array('theme_location' => 'wpj-main-menu','container' => false, 'menu_class' => '', 'fallback_cb' => 'wpj_default_menu'));
-                                        }
-                                        else {
-                                            wpj_default_menu();
-                                        }
-                                    ?>
+                                     -->
 
-                                        <!-- <ul>
-                                            <li><a href="#">Home</a></li>
-                                            <li><a href="#">Products</a>
-                                                <ul>
-                                                    <li><a href="#">Some Heading</a>
-                                                        <ul>
-                                                            <li><a href="#">Lidership</a></li>
-                                                            <li><a href="#">History</a></li>
-                                                            <li><a href="#">Locations</a></li>
-                                                            <li><a href="#">Careers</a></li>
-                                                            <li><a href="#">Locations</a></li>
-                                                            <li><a href="#">Careers</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Some Heading</a>
-                                                        <ul>
-                                                            <li><a href="#">Lidership</a></li>
-                                                            <li><a href="#">History</a></li>
-                                                            <li><a href="#">Locations</a></li>
-                                                            <li><a href="#">Locations</a></li>
-                                                            <li><a href="#">Careers</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    <li><a href="#">Some Heading</a>
-                                                        <ul>
-                                                            <li><a href="#">Lidership</a></li>
-                                                            <li><a href="#">History</a></li>
-                                                            <li><a href="#">Locations</a></li>
-                                                            <li><a href="#">Careers</a></li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Artwork Template</a></li>
-                                            <li><a href="#">Contact</a></li>
-                                        </ul> -->
+
+
+                        <nav>
+                            <?php
+                            
+                                if (function_exists('wp_nav_menu')) {
+                                    wp_nav_menu(array('theme_location' => 'wpj-main-menu','container' => false, 'menu_class' => 'main_menu', 'fallback_cb' => 'wpj_default_menu'));
+                                }
+                                else {
+                                    wpj_default_menu();
+                                }
+                            ?>
+
+                            <!-- <ul class="main_menu">
+                                <li><a href="#">Home</a></li>
+
+                                <li><a href="#">Drop 1 <i class="fa fa-sort-desc"></i></a>
+                                    <ul>
+                                    <li><a href="#">Product 1</a>
+                                        <ul>
+                                            <li><a href="#">Child 1</a></li>
+                                            <li><a href="#">Child 2</a></li>
+                                            <li><a href="#">Child 3</a></li>
+                                            <li><a href="#">Child 4</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Product 2</a>
+                                        <ul>
+                                            <li><a href="#">Child 1</a></li>
+                                            <li><a href="#">Child 2</a></li>
+                                            <li><a href="#">Child 3</a></li>
+                                            <li><a href="#">Child 4</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Product 3</a>
+                                        <ul>
+                                            <li><a href="#">Child 1</a></li>
+                                            <li><a href="#">Child 2</a></li>
+                                            <li><a href="#">Child 3</a></li>
+                                            <li><a href="#">Child 4</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Product 4</a>
+                                        <ul>
+                                            <li><a href="#">Child 1</a></li>
+                                            <li><a href="#">Child 2</a></li>
+                                            <li><a href="#">Child 3</a></li>
+                                            <li><a href="#">Child 4</a></li>
+                                        </ul>
+                                    </li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="#">Drop 2</a>
+
+                                </li>
+
+                                <li><a href="#">About</a></li>
+
+                                <li><a href="#">FAQ</a></li>
+                            </ul> -->
+
+
+                        </nav>
+
 
 
 
