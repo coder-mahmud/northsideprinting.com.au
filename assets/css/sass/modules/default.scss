@@ -7,7 +7,9 @@ html,body{
 	overflow-x: hidden;
 }
 
-
+img{
+	max-width: 100%;
+}
 .yellow_black_button{
     background:$mainYellow;
     padding:15px 35px;

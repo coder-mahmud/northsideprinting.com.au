@@ -35,7 +35,7 @@
                                 <i class="fa fa-search"></i><input type="text" placeholder="Serach Products">
                             </span>
                             
-                            <a class="phone" href="tel:0450078200">Contact Us <span>(0450)-078-200</span></a>
+                            <a class="phone" href="tel:<?php the_field('field_header_ph_clickable','option');?>">Contact Us <span><?php the_field('field_header_ph_visible','option');?></span></a>
                         </div>
 
                         <div class="menu_toggler">
@@ -51,7 +51,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                            <div class="menu-container clearfix">
+                            <div class=" clearfix">
                                     <!-- <button class="nav_menu_toggler_icon"><span class="fa fa-bars"></span></button>
                                     <nav class="manu clearfix">
 

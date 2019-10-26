@@ -44,6 +44,7 @@ jQuery(window).on('load',function(){
             $mainMenuBar.removeClass('stick');
             $mainMenuBarAnchor.height(0);
         }
+
     });
 
 $('.onpage_links a[href*="#"]')
@@ -85,24 +86,38 @@ $('.onpage_links a[href*="#"]')
 
 
   // window.onresize = function(){ location.reload(); }
-
-
+  
 
 
 // Menu Scripts
-      $(".menu_toggler").click(function() {
+window.onresize = function(){ 
+    //console.log($(window).width());
 
-            $("ul ul").css("display", "none");
-            $('ul li:nth-child(2) ul').css('display', 'block');
-            $("nav > ul").slideToggle();
+    if($(window).width() < 768){
+        $('ul li:nth-child(2) ul').css('display', 'block'); 
+    }
+}
+
+if($(window).width() < 768){
+    $('ul li:nth-child(2) ul').css('display', 'block');
+}
+    
+
+
+
+    $(".menu_toggler").click(function() {
+
+        $("ul.main_menu > ul").css("display", "none");
+        
+        $("nav > ul").slideToggle();
 
             
-      });
+    });
 
       $("ul li").click(function() {
             $("ul ul").slideUp();
             //$(this).find('ul').slideToggle();
-    $(this).find('ul').stop().slideToggle();
+            $(this).find('ul').stop().slideToggle();
       });
 
       $(window).resize(function() {

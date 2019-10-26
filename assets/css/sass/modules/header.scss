@@ -37,6 +37,12 @@
             top: 8px;
             margin-left: 20px;
             text-align: center;
+            &:active{
+            	color:$darkBlack;
+            }
+            &:hover{
+            	color:$darkBlack;
+            }
 
             span{
                 display: block;
@@ -57,137 +63,26 @@
     }
 }
 
-.menu_area{
-    // background: #95C43E;
-    /*background: $mainGreen;*/
-    
-
-   	@include largeMin{
-   		background: $mainGreen;
-   	}
-    @include medium{
-        .nav_menu_toggler_icon{
-            position: absolute;
-            top: -55px;
-            z-index: 999;
-            /* background: red; */
-            right: 25px;
-            border: 1px solid #E81D2A;
-            border-radius: 3px;
-        }
-        .nav_menu_toggler_icon span{
-            color:#E81D2A;
-        }
-    }
-
-    @include extraSmall{
-        .nav_menu_toggler_icon{
-            right: 10px;
-        }
-    }
-}
-.menu-container .manu ul li{
-	a{
-		@include medium{
-			color:#000;
-		}
-	}
-}
-.menu-container .manu ul li ul{
-    z-index: 99;
-
-/*    left: 0;
-    min-width: 300px;*/
-    @include medium{
-    	display: block !important;
-    }
-
-}
-
-.menu-container{
-	background: none;
-}
-
-.menu-container .manu > ul > li {
-	@include medium{
-
-		a{
-				padding:0;
-		}
-		ul{
-			background:none !important;
-			padding-top: 0 !important;
-
-
-			li{
-				a{
-					@include medium{
-						background:none !important;
-						color:#000 !important;
-					}
-
-
-				}
-				ul{
-					padding-left: 15px;
-					margin-bottom: 10px;
-					li{
-						a{
-							padding:0px 8px !important ;
-						}
-					}
-
-				}
-
-				& > a{
-					padding-bottom: 0;
-					border-bottom: 0px;
-				}
-			}		
-		}
-
-	}
-	
-	
-	
-	
-}
-
-@include medium{
-	.menu-container .manu > ul > li{
-		border-bottom:1px solid #000;
-	}
-
-	.menu-container .manu ul li .have_dropdown_n_style li ul li{
-		border-bottom:1px solid #000;
-	}
-
-	.manu > ul{
-		width: 70%;
-	    padding-left: 15px;
-	    padding-bottom: 30px;
-	}
-
-}
 
 /*=============== New Menu work ===================*/
 
 
-
+.menu_area{
+	background:$mainGreen;
+}
 
 ul li a {
       color: #292929;
       text-decoration: none;
       padding: 15px;
-      display: block;
+      display: inline-block;
+      width: 100%;
 }
 
 
 
 ul ul {
       position: absolute;
-      min-width: 200px;
-      /*background: lightgrey;*/
       display: none;
 }
 
@@ -211,13 +106,15 @@ ul li i {
 
 @media(max-width: 768px) {
       .menu_toggler {
-            display: block;
+           display: block;
       }
 
-      ul {
+      ul.main_menu {
             display: none;
             position: static;
             background: #e3e3e3;
+            max-width: 70%;
+
 
       }
 
@@ -231,6 +128,10 @@ ul li i {
 
       }
 
+      ul li:hover ul {
+	      display: none;
+	}
+
       
 }
 
@@ -242,6 +143,7 @@ ul li i {
 	    bottom: 5px;
 	    background: none;
 	    font-size: 25px;
+	    cursor:pointer;
 
 	    @include small{
 	    	right: 25px;
@@ -254,7 +156,7 @@ ul.main_menu {
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
-	background: #e3e3e3;
+	
 	position: relative;
 
 	& > li{
@@ -263,7 +165,7 @@ ul.main_menu {
 			 background: lightgrey;
 		}
 
-		a{
+		& > a{
 			position: relative;
 			i{
 				position: absolute;
@@ -280,8 +182,8 @@ ul.main_menu {
 			left: 0;
 			z-index: 1;
 			height: 270px;
-			background:lightGray;
-			/*display: block;*/
+			background:$darkBlack;
+			padding: 15px;
 			& > li{
 				display: inline-block;
 				width:25%;
@@ -293,13 +195,21 @@ ul.main_menu {
 					color:$lightRed;
 					font-weight: bold;
 					border-bottom:1px solid $mainGreen;
+					width: 100%;
+					padding: 0;
+					
 				}
 
 				& > ul{
 					width: 100%;
+					padding-left: 0px;
 					& > li{
 						display: block;
 						a{
+							padding-left: 0;
+							padding-top: 5px;
+							padding-bottom: 5px;
+							color:$white;
 
 							&:hover{
 								color:$lightRed;
@@ -315,11 +225,18 @@ ul.main_menu {
 @include medium{
 
 	ul.main_menu {
-
+		background: #fff;
+		width: 50%;
 
 		& > li{
 			display: block;
 			width: 100%;
+			border-bottom:1px solid #000;
+
+			&:last-child{
+				border-bottom:0px;
+			}
+			
 
 			&:hover{
 				background:none;
@@ -340,21 +257,29 @@ ul.main_menu {
 			& > ul{
 				padding-left: 25px;
 				background:none;
+				position: relative;
+				overflow: hidden;
+				height: auto;
 
 				& > li{
 					width: 100%;
 					font-size: 13px;
 
-					& > a{
+					a{
 						font-size: 13px;
+						display: inline-block;
+
 					}
 
 					& > ul{
+						background:none;
 						
 						& > li{
 							font-size: 13px;
 							a{
 								font-size: 13px;
+								color:$darkBlack;
+
 								&:hover{
 									
 								}
@@ -368,6 +293,13 @@ ul.main_menu {
 				}
 			}
 		}
+	}
+
+	nav{
+		position: absolute;
+		z-index: 9;
+		background:rgba(255,255,255,.5);
+		width: 100%;
 	}
 }
 

